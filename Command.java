@@ -6,6 +6,17 @@ public class Command{
 	static String styleName;
 
 	public static void main(String[] args){
+		System.out.println("This is markdown program.");
+				System.out.println("************************************");
+				System.out.println("this is a execution sequence of markdown ");
+				System.out.println("	# SETTING ");
+				System.out.println("	# NAME ");
+				System.out.println("	# INPUT ");
+				System.out.println("	# STYLE ");
+				System.out.println("	# TRANSLATE ");
+				System.out.println("	# HELP ");
+				System.out.println("************************************");
+
 		while(true){
 			Scanner scan = new Scanner(System.in);
 			String s = scan.nextLine();
