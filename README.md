@@ -16,8 +16,8 @@ Design and construct a Markdown-to-HTML converter
         
 4. SETTING -> show setting including input md name, output html file name, style name.
 
-       ex) SETTING
+        ex) SETTING
        
 5. TRANSLATE -> translate your file by setting.
 
-      ex) TRANSLATE
+        ex) TRANSLATE
