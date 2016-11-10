@@ -1,7 +1,7 @@
 # markdown-to-html
 Design and construct a Markdown-to-HTML converter
 
-1. INPUT '<file.md>' -> get your md file
+1. INPUT <file.md> -> get your md file
         ex) INPUT a.md
 2. (option)NAME <file.html> -> set yout html name. if you don't set it, the original file name is set to be the name of html file.
         ex) NAME hello.html
