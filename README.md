@@ -19,19 +19,17 @@ Design and construct a Markdown-to-HTML converter
 
         ex) fancy
         
-* help command form : gcc help        
+* help command form : gcc HELP        
         
         HELP -> show help message
+        ex)gcc HELP
  
- 
-* setting command form : gcc setting
+* setting command form : gcc SETTING
  
         SETTING -> show setting including input md name, output html file name, style name.
 
-        ex) SETTING
-       
-* translate command form : gcc translate
+        ex) gcc SETTING
 
-        TRANSLATE -> translate your file by setting.
-
-        ex) TRANSLATE
+*exit command form : gcc EXIT
+        EXIT-> end cmd.
+        ex)gcc EXIT
