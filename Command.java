@@ -19,7 +19,7 @@ public class Command{
 
 		if(s.compareTo("help")==0)
 						HELP();
-		else if(s.compareTo("quit")==0)
+		else if(s.compareTo("exit")==0)
 						System.exit(0);
 		else if(s.length()>2&&s.substring(0,3).compareTo("gcc")==0)
 		{
