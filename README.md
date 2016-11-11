@@ -5,11 +5,8 @@ Design and construct a Markdown-to-HTML converter
 
         ex) gcc -plain ReadMe.md -o a.html
   
->> Missing or wrong argument is not tolerated
-  
->> Style can be plain or fancy or slide
-  
-
+- Missing or wrong argument is not tolerated
+- Style can be plain or fancy or slide
   
 * Help command form : help       
 
