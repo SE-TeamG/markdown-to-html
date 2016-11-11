@@ -1,12 +1,12 @@
 # markdown-to-html
 Design and construct a Markdown-to-HTML converter
 
-* markdown command form : gcc [-option] [inputfilename] [-o output filename] 
-        * missing or wrong argument is not tolerated
-        * style can be plain or fancy or slide
-        ex) gcc -plain ReadMe.md -o a.html
+* Markdown command form : gcc [-option] [inputfilename] [-o output filename] 
+> Missing or wrong argument is not tolerated
+> Style can be plain or fancy or slide
+       ex) gcc -plain ReadMe.md -o a.html
 
-* help command form : help       
+* Help command form : help       
 
-* exit command form : exit
+* Exit command form : exit
 
