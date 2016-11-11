@@ -1,9 +1,9 @@
 # markdown-to-html
 Design and construct a Markdown-to-HTML converter
 
-*markdown command form : gcc [option] [inputfilename] [-o output filename] 
+* markdown command form : gcc [option] [inputfilename] [-o output filename] 
 
-ex) gcc plain ReadMe.md -o a.html
+        ex) gcc plain ReadMe.md -o a.html
 
 
 1. INPUT `<file.md>` -> get your md file
@@ -19,7 +19,7 @@ ex) gcc plain ReadMe.md -o a.html
 
         ex) fancy
         
-*help command form : gcc help        
+* help command form : gcc help        
         
         HELP -> show help message
  
@@ -30,8 +30,8 @@ ex) gcc plain ReadMe.md -o a.html
 
         ex) SETTING
        
-*translate command form : gcc translate
+* translate command form : gcc translate
 
- TRANSLATE -> translate your file by setting.
+        TRANSLATE -> translate your file by setting.
 
         ex) TRANSLATE
