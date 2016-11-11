@@ -69,7 +69,7 @@ public class Command{
 
 
 	static void HELP(){
-		System.out.println("Thanks for asking! you should follow next formation. missing argument is not acceptible.\ngcc -[style_name] [input.md] -o [output.html]\n\t\tex) gcc -plain in.md -o out.html");
+		System.out.println("Thanks for asking! you should follow next formation. missing argument is not acceptible. style can be 'plain', 'fancy', 'slide' only.\ngcc -[style_name] [input.md] -o [output.html]\n\t\tex) gcc -plain in.md -o out.html");
 
 	}
 
