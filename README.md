@@ -5,8 +5,8 @@
 
         ex) gcc -plain ReadMe.md -o a.html
   
-> - Missing or wrong argument is not tolerated
-> - Style can be plain or fancy or slide
+> 1. Missing or wrong argument is not tolerated
+> 2. Style can be plain or fancy or slide
   
 * Help command form : help       
 
