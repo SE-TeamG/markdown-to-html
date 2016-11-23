@@ -12,17 +12,18 @@ public class Node implements MDElement {
 				return null;
 			else if(s!=null&&s.charAt(0)=='#'){
 				Header h = new Header(1);
-				/*while( ){ // total 을 token들로 분리후 tlist에 add .
-
-					//이부분은 MDParser에서 document object안에 node list에 node들을 추가하는 것을 참고하셔요
+				/*while( ){ // 
+				you have to parse total to several tokens and add them to tlist.
+				the way it work is similar with the way add node in nlist which is excuted in node MDParser class.
+				you can refer to MDParser class.
 				}*/
-				h.tlist.add(new Token(s.substring(1))); // 단지 테스트를 위함. 토큰을 추가하는 방법.
+				h.tlist.add(new Token(s.substring(1))); // the way to insert just 'one' token. you have to revise it to insert all tokens.
 
 				return h;
 				}
 			else{
 
-				return new QuotedBlock(); // 위와 같은 방식
+				return new QuotedBlock(); // you have to revise it like above.
 
 			}
 		}
