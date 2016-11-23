@@ -3,23 +3,25 @@ import java.util.Iterator;
 public class PlainVisitor implements MDElementVisitor {
     private String currentdir = "";
     public void visit(Document document) {
-		//document list ³»¿¡ nlist¿¡¼­ node²¨³»¼­ visit -> while¹®°ú .accept() °¡ »ç¿ëµÊ.
+		//document list ë‚´ì— nlistì—ì„œ nodeêº¼ë‚´ì„œ visit -> whileë¬¸ê³¼ .accept() ê°€ ì‚¬ìš©ë¨.
 System.out.print("\n\n\n TRANSLATED->\n");
-		document.nlist.get(0).accept(new PlainVisitor()); // Ã¹¹øÂ° ³ëÆ®¸¦ visit ÇÏ´Â ¹æ¹ı(¿¹Á¦)
+		document.nlist.get(0).accept(new PlainVisitor()); // ì²«ë²ˆì§¸ ë…¸íŠ¸ë¥¼ visit í•˜ëŠ” ë°©ë²•(ì˜ˆì œ)
 
     }
 
 
     public void visit(Header h){
-		//outputfile¿¡ <headline> Ãâ·Â
-		System.out.print("<h1>"); // file¿¡ ½á¾ß ÇÏÁö¸¸ ÀÓÀÇ·Î ÇÁ¸°Æ® ÇÏµµ·Ï ÇØµÒ.
-		//token¿¡ 'visit'ÇÏ¿© ³»¿ë¹° Ãâ·Â
-		System.out.print((String)h.tlist.get(0).tString); // Áö±İÀº ÇÏ³ª¸¸ Ãâ·ÂÇßÁö¸¸ »ç½Ç Æ¼¸®½ºÆ®µé ÀüºÎ '¾ç½Ä¿¡ ¸ÂÃß¾î Ãâ·ÂÇØ¾ßÇÔ.
-		//outputfile¿¡ </headline> Ãâ·Â
+		//outputfileì— <headline> ì¶œë ¥
+		System.out.print("<h1>"); // fileì— ì¨ì•¼ í•˜ì§€ë§Œ ì„ì˜ë¡œ í”„ë¦°íŠ¸ í•˜ë„ë¡ í•´ë‘ .
+		//tokenì— 'visit'í•˜ì—¬ ë‚´ìš©ë¬¼ ì¶œë ¥
+		System.out.print((String)h.tlist.get(0).tString); // ì§€ê¸ˆì€ í•˜ë‚˜ë§Œ ì¶œë ¥í–ˆì§€ë§Œ ì‚¬ì‹¤ í‹°ë¦¬ìŠ¤íŠ¸ë“¤ ì „ë¶€ 'ì–‘ì‹ì— ë§ì¶”ì–´ ì¶œë ¥í•´ì•¼í•¨.
+		//outputfileì— </headline> ì¶œë ¥
 		System.out.print("</h1>");
 	}
 	public void visit(Node n){
 		System.out.println("why??");
 
 		}
+	
+	public void visit(QuotedBlock qb){}
 }
