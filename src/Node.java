@@ -1,53 +1,41 @@
-package helloworld;
-
-
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
-public class Node implements MDElement  {
-	
-public String total="";
-public List<Token> tlist = new ArrayList<Token>();
-public List<Node> nlist = new ArrayList<Node>();
-public Node(String tString){tString=total;}
+public class Node implements MDElement {
+	public String total="";
+    public List<Token> tlist = new ArrayList<Token>();
 
-	public Node create(String s){
-
-			int pos;
-			String s1="";
+    public void accept(MDElementVisitor v){};
+    public Node create(String s){
 			total=s;
-	
+			int i = 0;
+			int num = 0;
 			if(s.compareTo("")==0||s.compareTo(" ")==0||s.compareTo("\n")==0)
 				return null;
 			else if(s!=null&&s.charAt(0)=='#'){
-				int i=0;
-				while(s.charAt(i)=='#')
-				{i++;}
-
-					Header h = new Header(i-1);
-					h.tlist.add(new Token(s.substring(1))); // the way to insert just 'one' token. you have to revise it to insert all tokens.
-
-					return h;//-----?
+				for(i = 0; i < s.length(); i++){
+					if(s.charAt(i) == '#')
+						num++;
 				}
-			else if(s!=null&&s.charAt(0)=='>')
-			{
-				return new QuotedBlock();
+
+
+				Header h=new Header(num);
+				node_added_tokens(h,total.substring(num));
+
+				return h;
+
 			}
-return null;
+			else{
+
+				return new QuotedBlock();
+
+			}
 		}
 
-
-//@Override
-public void accept(MDElementVisitor v) {
-	// TODO Auto-generated method stub
-	
-}
+	public void node_added_tokens(Node n,String removed_nodeMark_string){
+		n.tlist.add(new PlainText(removed_nodeMark_string));
+		}
 
 }
-
-
-
-
 
 
