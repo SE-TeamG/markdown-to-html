@@ -5,7 +5,6 @@ public class Document implements MDElement {
     public List<Node> nlist = new ArrayList<Node>();
 
 	Document(){
-		//nlist = new ArrayList<Node>();
 		}
 	public void accept(MDElementVisitor v){
 		v.visit(this);

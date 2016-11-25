@@ -1,18 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class Header {
-
-	public List<Token> tlist = new ArrayList<Token>();
-
-	public Header(int i){
-		
-		int num=i; 				//font size
-			
+public class Header extends Node {
+	public int size = 1; // number of '#'
+    Header(int n){
+		size=n;
 	}
-//	@Override
-    public void accept (MDElementVisitor v) {
+
+	@Override
+    public void accept(MDElementVisitor v) {
         v.visit(this);
     }
-
 }

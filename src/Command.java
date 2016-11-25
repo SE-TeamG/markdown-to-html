@@ -10,7 +10,6 @@ public class Command{
 			Scanner scan = new Scanner(System.in);
 			String s = scan.nextLine();
 			getFunction(s);
-
 		}
 	}
 
