@@ -1,0 +1,29 @@
+
+<project name="HTML_comverter Project" default="compile" basedir=".">
+	<description>
+	</description>
+	
+	<property name="source.dir" location="src"/>
+	<property name="classes.dir" location="classes"/>
+	<property name="jar.dir" location="jar"/>
+	
+	<target name="init" description="setup project directories">
+		<mkdir dir="${classes.dir}"/>
+		<mkdir dir="${jar.dir}"/>
+		
+	</target>
+	<target name="compile" depends="init" description="generate documentation">
+		<javac srcdir="${source.dir}" destdir="${classes.dir}"/>
+		
+	</target>
+	<target name="clean" description="tidy up the workspace">
+		<delete dir="${classes.dir}"/>
+	</target>
+	<target name="mkjar" depends="init" description="make jar file">
+		<jar destfile="${jar.dir}/project.jar"
+		 basedir="."
+		 includes=""
+		 excludes="**/Test.class"/>
+	</target>
+	
+</project>
