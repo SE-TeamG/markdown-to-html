@@ -57,9 +57,8 @@ public class Command{
 
 
 			MDParser mp = new MDParser();
-
 			HTMLCodeGenerator cg=new HTMLCodeGenerator(mp.Parser(gcc_array[2]),gcc_array[1].substring(1),gcc_array[4]);
-
+			//HtmlChecker hc= new HtmlChecker(gcc_array[4]);
 
 		}
 		else

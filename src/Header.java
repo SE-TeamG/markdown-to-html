@@ -1,7 +1,9 @@
 public class Header extends Node {
 	public int size = 1; // number of '#'
     Header(int n){
-		size=n;
+		if(n<7)size=n;
+		else size=6;
+
 	}
 
 	@Override
