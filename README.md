@@ -1,5 +1,6 @@
 # markdown-to-html
->Design and construct a Markdown-to-HTML converter
+Design and construct a Markdown-to-HTML converter
+
 ## Using ant
 
 1. init and build:
@@ -22,8 +23,8 @@
 
         ex) gcc -plain ReadMe.md -o a.html
   
-> 1. Missing or wrong argument is not tolerated
-> 2. Style can be plain or fancy or slide
+1. Missing or wrong argument is not tolerated
+2. Style can be plain or fancy or slide
   
 *  Help command form : 
         
