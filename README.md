@@ -103,4 +103,9 @@ Design and construct a Markdown-to-HTML converter
             13. list            ( converted as one list node ) 
 6. If user want to use italic expression, use one '_'
 
-        ex)
+        ex) __italic__ (not allowed)
+        
+7. same kind of expression (token) is not alloweded
+
+        ex) *once* and *twice* (not allowed)
+        ex) text _and_ text (allowded, text is ok to reuse.)
