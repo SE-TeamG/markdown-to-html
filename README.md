@@ -1,10 +1,23 @@
 # markdown-to-html
 >Design and construct a Markdown-to-HTML converter
+## Using ant
 
+1. init and build:
+        
+        ant
+        
+2. clear the classes folder
+
+        ant clean
+        
+3. make a report written by jacoco
+
+        ant cov-report
 
 ## How to Run Our Program
 
 * Java file to Run :: Command.java
+* source md file must be located in* classes* folder! (html file would be created in classes folder, too.)
 * Markdown command form : gcc [-option] [inputfilename] [-o output filename] 
 
         ex) gcc -plain ReadMe.md -o a.html
