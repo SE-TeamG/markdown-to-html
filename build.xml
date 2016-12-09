@@ -1,8 +1,10 @@
-
-<project name="HTML_comverter Project" default="compile" basedir=".">
+<project name="HTML_comverter Project" default="compile" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
 	<description>
 	</description>
-	
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+			<classpath path="lib/jacocoant.jar"/>
+		</taskdef>
+
 	<property name="source.dir" location="src"/>
 	<property name="classes.dir" location="classes"/>
 	<property name="jar.dir" location="jar"/>
@@ -10,11 +12,22 @@
 	<target name="init" description="setup project directories">
 		<mkdir dir="${classes.dir}"/>
 		<mkdir dir="${jar.dir}"/>
+		<mkdir dir="test/classes"/>
 		
 	</target>
 	<target name="compile" depends="init" description="generate documentation">
-		<javac srcdir="${source.dir}" destdir="${classes.dir}"/>
-		
+		<javac srcdir="src" destdir="classes" debug="true" includeantruntime="false" >
+			<classpath path="lib/jtidy.jar" />
+			<classpath path="lib/junit.jar" />
+			<classpath path="lib/hamcrest-core.jar" />
+			
+		</javac>
+		<javac srcdir="test/src" destdir="test/classes" debug="true" includeantruntime="false" >
+					<classpath path="lib/jtidy.jar" />
+					<classpath path="lib/junit.jar" />
+					<classpath path="lib/hamcrest-core.jar" />
+					<classpath path="classes" />
+		</javac>
 	</target>
 	<target name="clean" description="tidy up the workspace">
 		<delete dir="${classes.dir}"/>
@@ -24,6 +37,66 @@
 		 basedir="."
 		 includes=""
 		 excludes="**/Test.class"/>
+	</target>
+	<target name="test" depends ="compile">
+			<junit showoutput="true" printsummary="on" enabletestlistenerevents="true" fork="true">
+				<classpath path="classes" />
+				<classpath path="test/classes" />
+				<classpath path="lib/junit.jar" />
+				<classpath path="lib/hamcrest-core.jar" />
+	
+				<formatter type="plain" usefile="false" />
+	
+				<test name="HTMLCodeGeneratorTest">
+				</test>
+			</junit>
+		</target>
+	
+		<target name="cov-test" depends ="compile">
+			<jacoco:coverage>
+				<junit showoutput="true" printsummary="on" enabletestlistenerevents="true" fork="true">
+					<classpath path="classes" />
+					<classpath path="test/classes" />
+					<classpath path="lib/junit.jar" />
+					<classpath path="lib/hamcrest-core.jar" />
+	
+					<formatter type="plain" usefile="false" />
+	
+					<test name="HTMLCodeGeneratorTest">
+					</test>
+				</junit>
+			</jacoco:coverage>
+	
+			<jacoco:coverage>
+				<java classname="HTMLCodeGeneratorTest" fork="true">
+					<classpath path="classes" />
+					<classpath path="test/classes" />
+					<classpath path="lib/junit.jar" />
+					<classpath path="lib/hamcrest-core.jar" />
+				</java>
+			</jacoco:coverage>
+		</target>
+	
+		<target name="cov-report" depends="cov-test">
+			<jacoco:report>
+				<executiondata>
+					<file file="jacoco.exec" />
+				</executiondata>
+	
+				<structure name="HTMLCodeGenerator">
+					<classfiles>
+					<fileset dir="test/classes" />
+					<fileset dir="classes" />
+					</classfiles>
+					<sourcefiles>
+						<fileset dir="src" />
+						<fileset dir="test/src" />
+					</sourcefiles>
+				</structure>
+	
+				<html destdir="test/report" />
+			</jacoco:report>
+	
 	</target>
 	
 </project>
