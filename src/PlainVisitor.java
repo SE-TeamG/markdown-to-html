@@ -12,12 +12,14 @@ public class PlainVisitor implements MDElementVisitor {
 		try{
 		fw = new FileWriter(htmlFileName);
          bw = new BufferedWriter(fw);
+		bw.write("<html>\n");
 		for(int i=0;i<document.nlist.size();i++)
 			{
 
 				document.nlist.get(i).accept(this);
 				bw.write("\n");
 			}
+			bw.write("</html>");
 		bw.close();
 	}catch (IOException e)
         {
@@ -104,7 +106,9 @@ public class PlainVisitor implements MDElementVisitor {
 
 						for(int i=0;i<il.tlist.size();i++)
 						{
-							if(!il.tlist.get(i).tString.matches("\\s+")&&!il.tlist.get(i).tString.matches("\\s?</br>\\s?")){
+							if(!il.tlist.get(i).tString.matches("\\s+")
+							&&
+							!il.tlist.get(i).tString.matches("\\s?</br>\\s?")){
 
 							il.tlist.get(i).accept(this);
 

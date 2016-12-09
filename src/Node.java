@@ -95,7 +95,7 @@ public class Node implements MDElement {
 		}
 	public void node_added_tokens(Node n,String s){
 
-	// special
+	//
 	  	if(s.matches("!\\[.*\\]\\(.*\\)")) // image ![]()
 				{
 					StyleText st=new StyleText(s);
@@ -129,13 +129,7 @@ public class Node implements MDElement {
 		}
 
 
-	  	else if(s.matches("[_][_].*[_][_]")) //italic
-			  	{
 
-					StyleText st=new StyleText(s.substring(2,s.length()-2));
-					st.setStyle(4);
-			  		n.tlist.add(st);
-		}
 	  	else if(s.matches("[_].*[_]")) //italic
 	  	{
 			StyleText st=new StyleText(s.substring(1,s.length()-1));
@@ -168,9 +162,6 @@ public class Node implements MDElement {
 			node_added_tokens(n,s.substring(0,s.indexOf(")")+1));
 	  		node_added_tokens(n,s.substring(s.indexOf(")")+1,s.length()));
 		}
-		else if(s.matches("http://.*\\s+.*")) // whole link
-			 	{node_added_tokens(n,s.substring(0,s.indexOf(" ")));
-			  	node_added_tokens(n,s.substring(s.indexOf(" ")+1,s.length()));}
 
 		else if(s.matches("\\s*[*][*].*[*][*].+"))
 				{
@@ -184,11 +175,7 @@ public class Node implements MDElement {
 		}
 
 
-		else if(s.matches("\\s*[_][_].*[_][_].+"))
-						{
-							node_added_tokens(n,s.substring(0,findLastIndex(s,"__")+1));
-					  		node_added_tokens(n,s.substring(findLastIndex(s,"__")+1,s.length()));
-		}
+
 	  	else if(s.matches("\\s*[_].*[_].+")) //italic _ _
 				{
 					node_added_tokens(n,s.substring(0,findLastIndex(s,"_")+1));
@@ -224,11 +211,7 @@ public class Node implements MDElement {
 				node_added_tokens(n,s.substring(0,s.indexOf("[")));
 				node_added_tokens(n,s.substring(s.indexOf("["),s.length()));
 			}
-			else if(s.matches(".+http://.*\\s.*")) // whole link
-						{
-							node_added_tokens(n,s.substring(0,s.indexOf("h")));
-							node_added_tokens(n,s.substring(s.indexOf("h"),s.length()));
-			}
+
 			else if(s.matches(".+\\s*[*][*].*[*][*].*"))
 						{
 							node_added_tokens(n,s.substring(0,s.indexOf("**")));
@@ -240,11 +223,6 @@ public class Node implements MDElement {
 				node_added_tokens(n,s.substring(s.indexOf("*"),s.length()));
 			}
 
-			else if(s.matches(".+\\s*[_][_].*[_][_].*"))
-								{
-									node_added_tokens(n,s.substring(0,s.indexOf("__")));
-									node_added_tokens(n,s.substring(s.indexOf("__"),s.length()));
-			}
 
 			else if(s.matches(".+\\s*[_].*[_].*")) //italic _ _
 					{
