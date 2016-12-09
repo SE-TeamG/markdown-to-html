@@ -72,8 +72,7 @@ Design and construct a Markdown-to-HTML converter
                                 **this is also bold**
                         (4) italic
                                 _italic_
-                                __italic too__
-                         (5) inline code
+                        (5) inline code
                                 'inline code'
                          
                        
@@ -102,3 +101,6 @@ Design and construct a Markdown-to-HTML converter
         
         ex) 1. this is
             13. list            ( converted as one list node ) 
+6. If user want to use italic expression, use one '_'
+
+        ex)
