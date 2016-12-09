@@ -27,7 +27,7 @@
         ex) > 1. hey (not allowed)
         
         ex) 1. list
-                * nested list
+                * nested list  (not allowed)
         
 2. Multiline Header is not allowed.
         
