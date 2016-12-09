@@ -13,7 +13,6 @@ public interface MDElementVisitor {
 
     public abstract void visit(Token t);
 	public abstract void visit(PlainText pt);
-	public abstract void visit(ListToken lt);
 	public abstract void visit(StyleText st);
 	public abstract void visit(HTMLCode hc);
 

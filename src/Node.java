@@ -95,7 +95,7 @@ public class Node implements MDElement {
 		}
 	public void node_added_tokens(Node n,String s){
 
-	//final token
+	// special
 	  	if(s.matches("!\\[.*\\]\\(.*\\)")) // image ![]()
 				{
 					StyleText st=new StyleText(s);

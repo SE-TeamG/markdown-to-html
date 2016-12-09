@@ -4,7 +4,6 @@ public class Command{
 
 
 	public static void main(String[] args){
-		getFunction("gcc -plain ex.md -o ex2.html");
 
 		while(true){
 			Scanner scan = new Scanner(System.in);
@@ -56,8 +55,8 @@ public class Command{
 						}
 
 
-			MDParser mp = new MDParser();
-			HTMLCodeGenerator cg=new HTMLCodeGenerator(mp.Parser(gcc_array[2]),gcc_array[1].substring(1),gcc_array[4]);
+
+			HTMLCodeGenerator cg=new HTMLCodeGenerator(new MDParser().Parser(gcc_array[2]),gcc_array[1].substring(1),gcc_array[4]);
 			//HtmlChecker hc= new HtmlChecker(gcc_array[4]);
 
 		}

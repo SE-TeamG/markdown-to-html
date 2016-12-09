@@ -152,6 +152,5 @@ public class PlainVisitor implements MDElementVisitor {
 			}
 		}catch(IOException e){}
 		}
-	public void visit(ListToken lt){try{bw.write(lt.tString);}catch (IOException e){}}
 
 }
