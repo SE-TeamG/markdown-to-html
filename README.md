@@ -22,6 +22,49 @@
         
 ## How to Write md file to Translate by out program
 
+### what we support
+
++ nodes that we support
+
+                1. text -> <p></p>
+                
+                2. >quoted block 
+                
+                3. 1. ordered list
+                
+                3. + unoredered list
+                
+                4. \t code block
+                
+                5. # head line (the number of '#' is upto 6,  and tail is allowed. )
+                
+                6. Horizontal rule
+               * * * / ***** / - - - / -----
+
++ tokens that we support
+
+                1. plain text
+                
+                2. html text
+                        (must be rapped as <start> and </end> tags) 
+                3. style text
+                        (1) image
+                                ![ref texts](link of image)
+                        (2) link
+                                [google](http://google.com)
+                                http://naver.com
+                        (3) bold
+                                *bold"
+                                **this is also bold**
+                        (4) italic
+                                _italic_
+                                __italic too__
+                         (5) inline code
+                                'inline code'
+                         
+                       
+### what we do not support
+
 1. Nested Node is not allowed.
 
         ex) > 1. hey (not allowed)
@@ -40,3 +83,8 @@
 
         ex) <em> hey </em>  (allowed)
         ex) <br/>  (not allowed)
+
+5. number + '.' is ordered list with no exception. the order of number is not important.
+        
+        ex) 1. this is
+            13. list            ( converted as one list node ) 
