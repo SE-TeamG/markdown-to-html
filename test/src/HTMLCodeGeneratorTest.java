@@ -5,17 +5,7 @@ import java.io.*;
 
 public class HTMLCodeGeneratorTest
 {
-	@Test
-	public void testHTMLCodeGenerator() {
-
-		Document d= new Document();
-		d.nlist.add(new Node().create("#headline"));
-
-		String s="";
-		//HTMLCodeGenerator h = new HTMLCodeGenerator(d,"plain","ex.html") ;
-
-
-	}
+	
 	@Test
 		public void testNode() {
 			Node n = new Node();
@@ -244,6 +234,17 @@ public class HTMLCodeGeneratorTest
 
 
 								}catch(IOException e){}
+	}
+	@Test
+	public void testHTMLCodeGenerator() {
+
+		Document d= new Document();
+		d.nlist.add(new Node().create("#headline"));
+
+		String s="";
+		//HTMLCodeGenerator h = new HTMLCodeGenerator(d,"plain","ex.html") ;
+
+
 	}
 @Test
 						public void testCommand10() {
