@@ -5,5 +5,8 @@ HTMLCodeGenerator(Document d, String style, String htmlName){
 
 			d.accept(new PlainVisitor(htmlName));
 
+		if(style.compareTo("fancy")==0)
+			d.accept(new FancyVisitor(htmlName));
+
 	}
 }
